@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.security.SecureRandom;
 import java.util.Base64;
 
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
@@ -25,8 +24,8 @@ public class FilterComponent extends OncePerRequestFilter {
 			throws ServletException, IOException {
 		String ClientIp = request.getRemoteAddr();
 		String clientToken = getOrGenerateCookieId(request, response);
-		System.out.println(ClientIp + "\n" + clientToken);
-		//abort
+		
+		System.out.println(clientToken);
 		
 		filterChain.doFilter(request, response);
 		
