@@ -26,7 +26,7 @@ mvn spring-boot:run
 
 ### Linux / macOS (Bash or Zsh)
 
-##Temporary (valid for current terminal session only):
+## Temporary (valid for current terminal session only):
 
 ```
 export OPENAI_API_KEY=your-real-key
