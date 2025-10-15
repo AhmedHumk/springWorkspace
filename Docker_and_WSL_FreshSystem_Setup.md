@@ -135,5 +135,3 @@ Once Docker works, create your first `docker-compose.yml` file for databases lik
 
 ---
 
-Author: ChatGPT (GPT-5)
-For user setup reference (Windows & Linux, 2025)
