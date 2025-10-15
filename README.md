@@ -66,5 +66,9 @@ http://localhost:<and enter your admin port>
 docker-compose down
 docker-compose up -d
 ```
+
+### how to install docker in windows and linux
+[Docker_and_WSL_Setup](https://github.com/AhmedHumk/springWorkspace/blob/main/Docker_and_WSL_Setup.md)
+
 ### Video Reference
 [Watch Related youtube Video on my Youtube Channel](https://youtu.be/kgkd7eFV5ww?si=WU5vHE98GX9Nb9QU)
