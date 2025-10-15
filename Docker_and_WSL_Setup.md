@@ -5,7 +5,7 @@ This guide helps you set up Docker and WSL2 correctly from scratch on Windows or
 
 ---
 
-## 🪟 WINDOWS SETUP (Docker Desktop + WSL2)
+## WINDOWS SETUP (Docker Desktop + WSL2)
 
 ### 1. Install Docker Desktop
 - Download from: https://www.docker.com/products/docker-desktop/
