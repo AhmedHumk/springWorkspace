@@ -61,7 +61,7 @@ docker ps
 http://localhost:<and enter your admin port>
 ```
 
-### you can use the following commands to apply any changes to the yml file or .env file
+### you can use the following commands to apply any changes to the docker-compose.yml file or .env file
 ```
 docker-compose down
 docker-compose up -d
