@@ -1,23 +1,35 @@
 # ==========================
-# Docker Compose File
+# ملف Docker Compose
 # ==========================
-# الملف ده بيجمع كل الخدمات
-# اللي محتاجها مشروعك  
-# (Databases, Admin tools, Redis)
-# في مكان واحد.
-# كل خدمة بتشتغل داخل 
-# Container 
-# منفصل لكنها متصلة ببعض داخليًا
-# الغرض اني ممكن استخدم الخدمات دي في مشروع زي
+# الملف ده بيجمع كل الخدمات اللي مشروعك محتاجها
+# (قاعدة بيانات، واجهات إدارة، Redis)
+# كل خدمة بتشتغل في Container 
+# منفصل لكن متوصلة ببعض داخليًا
+# الغرض إنك تقدر تستخدم الخدمات دي في مشروع زي
 # Spring Boot SaaS (Software as a Service)
 # ==============================================
 # بداية تعريف الخدمات اللي المشروع هيستخدمها
+# بالنسبة لـ 
+# pgAdmin:
+# متنساش تسجل السيرفر بعد ما تثبته
+# عن طريق زيارة 
+# pgAdmin http://localhost:<AdminPort>
+# وتحط 
+# postgres
+# في خانة 
+# host 
+# أثناء التسجيل.
+# Clean your docker if needed warning this will delete everything!
+# powerShell / terminal
+# docker system prune -a --volumes
+# Run it using
+# docker-compose up -d
 services:
   # ==========================
   #  MySQL Database
   # ==========================
   mysql:
-    image: mysql:8.0                # بيستخدم صورة MySQL من Docker Hub (الإصدار 8.0)
+    image: mysql:8.4                # mysql Version
     container_name: mysql_db        # اسم الحاوية داخل Docker (هتظهر كده في docker ps)
     restart: always                 # يعيد التشغيل تلقائيًا لو حصل توقف مفاجئ
     env_file:
@@ -36,7 +48,7 @@ services:
   #  phpMyAdmin (واجهة إدارة MySQL)
   # ==========================
   phpmyadmin:
-    image: phpmyadmin:latest        # أحدث إصدار من phpMyAdmin من Docker Hub
+    image: phpmyadmin:latest        # get latest version
     container_name: phpmyadmin      # اسم الحاوية داخل Docker
     restart: always                 # يعيد التشغيل تلقائيًا عند التوقف
     depends_on:
@@ -55,7 +67,7 @@ services:
   #  PostgreSQL Database
   # ==========================
   postgres:
-    image: postgres:16              # صورة PostgreSQL الإصدار 16
+    image: postgres:16              # postgresql version
     container_name: postgres_db     # اسم الحاوية
     restart: always                 # إعادة التشغيل التلقائي عند التوقف
     env_file:
@@ -73,7 +85,7 @@ services:
   #  pgAdmin (واجهة PostgreSQL)
   # ==========================
   pgadmin:
-    image: dpage/pgadmin4:latest    # صورة pgAdmin من Docker Hub
+    image: dpage/pgadmin4:latest    # Get latest version
     container_name: pgadmin         # اسم الحاوية داخل Docker
     restart: always                 # إعادة التشغيل التلقائي
     depends_on:
@@ -90,7 +102,7 @@ services:
   #  Redis Cache Server
   # ==========================
   redis:
-    image: redis:7                  # صورة Redis من Docker Hub (الإصدار 7)
+    image: redis:7                  # redis version
     container_name: redis_cache     # اسم الحاوية داخل Docker
     restart: always                 # إعادة التشغيل التلقائي عند التوقف
     env_file:

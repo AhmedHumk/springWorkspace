@@ -26,6 +26,7 @@ public class FilterComponent extends OncePerRequestFilter {
 		String clientToken = getOrGenerateCookieId(request, response);
 		
 		System.out.println(clientToken);
+		System.out.println(ClientIp);
 		
 		filterChain.doFilter(request, response);
 		
